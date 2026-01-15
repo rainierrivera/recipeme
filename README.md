@@ -39,15 +39,17 @@ Test
 │   ├── Service
 │   ├── View
 │   └── ViewModel
+├── View
+│   ├── SearchItemView
+│   ├── SearchField
+│   ├── SearchView
+│   ├── SearchBar
+│   └── AppSearchTextField
+├── ViewModel
+│   ├── SearchListViewModel
+│   └──  SearchViewModel
 ├── Assets
 ├── recipes.json
-├── AppSearchTextField
-├── SearchBar
-├── SearchField
-├── SearchItemView
-├── SearchListViewModel
-├── SearchView
-├── SearchViewModel
 ├── TestTests
 └── TestUITests
 ```
