@@ -206,6 +206,7 @@ This makes the codebase ready for unit testing when added.
 
 - ✅ Built with SwiftUI (Xcode 26.2)
 - ✅ MVVM + Coordinator architecture
-- ✅ Real network layer with mock JSON fallback
+- ✅ Real network layer
+- ✅ Load mock response - local JSON
 - ✅ Dependency-injected, testable design
 - ⏳ Unit tests planned but not yet implemented
