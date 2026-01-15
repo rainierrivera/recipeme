@@ -1,0 +1,412 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Garlic Butter Shrimp",
+      "subtitle": "Quick seafood main dish",
+      "imageName": "garlic_butter_shrimp",
+      "category": 3,
+      "numberOfServings": 2,
+      "likes": 87,
+      "difficulty": "Easy",
+      "durationMinutes": 20,
+      "ingredients": [
+        { "name": "Shrimp", "quantity": 500, "unit": "gram", "category": 3, "notes": "peeled" },
+        { "name": "Butter", "quantity": 2, "unit": "tablespoon", "category": 6, "notes": null },
+        { "name": "Garlic", "quantity": 2, "unit": "teaspoon", "category": 7, "notes": "minced" }
+      ],
+      "steps": [
+        { "instruction": "Melt butter in pan.", "duration": "2 min" },
+        { "instruction": "Add garlic and sauté.", "duration": "1 min" },
+        { "instruction": "Add shrimp and cook until pink.", "duration": "4 min" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Chicken Teriyaki",
+      "subtitle": "Sweet savory chicken",
+      "imageName": "chicken_teriyaki",
+      "category": 1,
+      "numberOfServings": 3,
+      "likes": 42,
+      "difficulty": "Easy",
+      "durationMinutes": 25,
+      "ingredients": [
+        { "name": "Chicken breast", "quantity": 400, "unit": "gram", "category": 2, "notes": "sliced" },
+        { "name": "Soy sauce", "quantity": 3, "unit": "tablespoon", "category": 7, "notes": null },
+        { "name": "Sugar", "quantity": 1, "unit": "tablespoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Cook chicken in pan.", "duration": "8 min" },
+        { "instruction": "Add soy sauce and sugar.", "duration": "2 min" },
+        { "instruction": "Simmer until glazed.", "duration": "2 min" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pork Adobo",
+      "subtitle": "Classic Filipino dish",
+      "imageName": "pork_adobo",
+      "category": 1,
+      "numberOfServings": 4,
+      "likes": 65,
+      "difficulty": "Medium",
+      "durationMinutes": 60,
+      "ingredients": [
+        { "name": "Pork belly", "quantity": 600, "unit": "gram", "category": 1, "notes": "cubed" },
+        { "name": "Soy sauce", "quantity": 4, "unit": "tablespoon", "category": 7, "notes": null },
+        { "name": "Vinegar", "quantity": 3, "unit": "tablespoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Combine all ingredients.", "duration": "5 min" },
+        { "instruction": "Simmer until tender.", "duration": "30 min" },
+        { "instruction": "Reduce sauce.", "duration": "5 min" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Beef Sinigang",
+      "subtitle": "Sour tamarind soup",
+      "imageName": "beef_sinigang",
+      "category": 1,
+      "numberOfServings": 4,
+      "likes": 18,
+      "difficulty": "Hard",
+      "durationMinutes": 90,
+      "ingredients": [
+        { "name": "Beef shank", "quantity": 700, "unit": "gram", "category": 1, "notes": null },
+        { "name": "Tamarind mix", "quantity": 2, "unit": "tablespoon", "category": 7, "notes": null },
+        { "name": "Kangkong", "quantity": 200, "unit": "gram", "category": 5, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Boil beef until tender.", "duration": "45 min" },
+        { "instruction": "Add tamarind seasoning.", "duration": "3 min" },
+        { "instruction": "Add vegetables and simmer.", "duration": "5 min" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Veggie Stir Fry",
+      "subtitle": "Healthy vegetable mix",
+      "imageName": "veggie_stir_fry",
+      "category": 2,
+      "numberOfServings": 2,
+      "likes": 73,
+      "difficulty": "Easy",
+      "durationMinutes": 15,
+      "ingredients": [
+        { "name": "Broccoli", "quantity": 200, "unit": "gram", "category": 5, "notes": null },
+        { "name": "Carrot", "quantity": 100, "unit": "gram", "category": 5, "notes": "sliced" },
+        { "name": "Soy sauce", "quantity": 2, "unit": "tablespoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Heat oil in pan.", "duration": "1 min" },
+        { "instruction": "Stir fry vegetables.", "duration": "5 min" },
+        { "instruction": "Add soy sauce.", "duration": "1 min" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Classic Pancakes",
+      "subtitle": "Fluffy breakfast favorite",
+      "imageName": "classic_pancakes",
+      "category": 999,
+      "numberOfServings": 4,
+      "likes": 29,
+      "difficulty": "Easy",
+      "durationMinutes": 25,
+      "ingredients": [
+        { "name": "Flour", "quantity": 1, "unit": "cup", "category": 7, "notes": null },
+        { "name": "Milk", "quantity": 250, "unit": "ml", "category": 6, "notes": null },
+        { "name": "Egg", "quantity": 1, "unit": "piece", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Mix dry ingredients.", "duration": "2 min" },
+        { "instruction": "Add milk and egg.", "duration": "3 min" },
+        { "instruction": "Cook on pan.", "duration": "2 min per side" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Mango Graham Cup",
+      "subtitle": "No-bake dessert",
+      "imageName": "mango_graham",
+      "category": 4,
+      "numberOfServings": 3,
+      "likes": 94,
+      "difficulty": "Easy",
+      "durationMinutes": 35,
+      "ingredients": [
+        { "name": "Mango", "quantity": 300, "unit": "gram", "category": 5, "notes": "cubed" },
+        { "name": "Cream", "quantity": 200, "unit": "ml", "category": 6, "notes": null },
+        { "name": "Graham crackers", "quantity": 1, "unit": "cup", "category": 7, "notes": "crushed" }
+      ],
+      "steps": [
+        { "instruction": "Layer crackers and cream.", "duration": "5 min" },
+        { "instruction": "Add mango.", "duration": "2 min" },
+        { "instruction": "Chill before serving.", "duration": "30 min" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Ube Latte",
+      "subtitle": "Creamy purple drink",
+      "imageName": "ube_latte",
+      "category": 5,
+      "numberOfServings": 1,
+      "likes": 11,
+      "difficulty": "Easy",
+      "durationMinutes": 10,
+      "ingredients": [
+        { "name": "Ube jam", "quantity": 2, "unit": "tablespoon", "category": 5, "notes": null },
+        { "name": "Milk", "quantity": 250, "unit": "ml", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Mix ube jam with milk.", "duration": "2 min" },
+        { "instruction": "Serve hot or iced.", "duration": null }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Banana Smoothie",
+      "subtitle": "Simple fruit drink",
+      "imageName": "banana_smoothie",
+      "category": 5,
+      "numberOfServings": 1,
+      "likes": 56,
+      "difficulty": "Easy",
+      "durationMinutes": 10,
+      "ingredients": [
+        { "name": "Banana", "quantity": 2, "unit": "piece", "category": 5, "notes": "ripe" },
+        { "name": "Milk", "quantity": 250, "unit": "ml", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Blend all ingredients.", "duration": "1 min" },
+        { "instruction": "Serve chilled.", "duration": null }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Caesar Salad",
+      "subtitle": "Classic creamy salad",
+      "imageName": "caesar_salad",
+      "category": 6,
+      "numberOfServings": 2,
+      "likes": 78,
+      "difficulty": "Easy",
+      "durationMinutes": 15,
+      "ingredients": [
+        { "name": "Lettuce", "quantity": 200, "unit": "gram", "category": 5, "notes": "chopped" },
+        { "name": "Croutons", "quantity": 1, "unit": "cup", "category": 7, "notes": null },
+        { "name": "Parmesan", "quantity": 2, "unit": "tablespoon", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Toss lettuce with dressing.", "duration": "2 min" },
+        { "instruction": "Add croutons and cheese.", "duration": "1 min" }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Grilled Cheese Sandwich",
+      "subtitle": "Crispy and cheesy classic",
+      "imageName": "grilled_cheese",
+      "category": 999,
+      "numberOfServings": 1,
+      "likes": 33,
+      "difficulty": "Easy",
+      "durationMinutes": 10,
+      "ingredients": [
+        { "name": "Bread", "quantity": 2, "unit": "slice", "category": 7, "notes": null },
+        { "name": "Cheddar cheese", "quantity": 2, "unit": "slice", "category": 6, "notes": null },
+        { "name": "Butter", "quantity": 1, "unit": "tablespoon", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Butter the bread slices.", "duration": "1 min" },
+        { "instruction": "Grill sandwich until golden.", "duration": "4 min" }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Deviled Eggs",
+      "subtitle": "Classic party appetizer",
+      "imageName": "deviled_eggs",
+      "category": 6,
+      "numberOfServings": 4,
+      "likes": 90,
+      "difficulty": "Medium",
+      "durationMinutes": 25,
+      "ingredients": [
+        { "name": "Eggs", "quantity": 6, "unit": "piece", "category": 6, "notes": "hard boiled" },
+        { "name": "Mayonnaise", "quantity": 3, "unit": "tablespoon", "category": 6, "notes": null },
+        { "name": "Mustard", "quantity": 1, "unit": "teaspoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Cut eggs in half.", "duration": "2 min" },
+        { "instruction": "Mix yolks with mayo and mustard.", "duration": "3 min" },
+        { "instruction": "Fill egg whites with mixture.", "duration": "2 min" }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Fried Rice",
+      "subtitle": "Easy one-pan rice meal",
+      "imageName": "fried_rice",
+      "category": 7,
+      "numberOfServings": 2,
+      "likes": 24,
+      "difficulty": "Easy",
+      "durationMinutes": 20,
+      "ingredients": [
+        { "name": "Cooked rice", "quantity": 2, "unit": "cup", "category": 7, "notes": "day old" },
+        { "name": "Egg", "quantity": 1, "unit": "piece", "category": 6, "notes": null },
+        { "name": "Soy sauce", "quantity": 2, "unit": "tablespoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Heat oil in pan.", "duration": "1 min" },
+        { "instruction": "Scramble egg.", "duration": "2 min" },
+        { "instruction": "Add rice and soy sauce.", "duration": "4 min" }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Spaghetti Carbonara",
+      "subtitle": "Creamy Italian pasta",
+      "imageName": "carbonara",
+      "category": 7,
+      "numberOfServings": 3,
+      "likes": 61,
+      "difficulty": "Medium",
+      "durationMinutes": 30,
+      "ingredients": [
+        { "name": "Spaghetti", "quantity": 300, "unit": "gram", "category": 7, "notes": null },
+        { "name": "Egg", "quantity": 2, "unit": "piece", "category": 6, "notes": null },
+        { "name": "Parmesan", "quantity": 3, "unit": "tablespoon", "category": 6, "notes": "grated" }
+      ],
+      "steps": [
+        { "instruction": "Cook pasta until al dente.", "duration": "10 min" },
+        { "instruction": "Mix eggs and cheese.", "duration": "2 min" },
+        { "instruction": "Combine pasta with sauce.", "duration": "3 min" }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Tuna Mayo Onigiri",
+      "subtitle": "Easy Japanese rice snack",
+      "imageName": "tuna_onigiri",
+      "category": 7,
+      "numberOfServings": 2,
+      "likes": 7,
+      "difficulty": "Easy",
+      "durationMinutes": 15,
+      "ingredients": [
+        { "name": "Cooked rice", "quantity": 2, "unit": "cup", "category": 7, "notes": null },
+        { "name": "Canned tuna", "quantity": 150, "unit": "gram", "category": 3, "notes": "drained" },
+        { "name": "Mayonnaise", "quantity": 2, "unit": "tablespoon", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Mix tuna and mayonnaise.", "duration": "2 min" },
+        { "instruction": "Shape rice and add filling.", "duration": "5 min" }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "French Toast",
+      "subtitle": "Sweet breakfast favorite",
+      "imageName": "french_toast",
+      "category": 999,
+      "numberOfServings": 2,
+      "likes": 49,
+      "difficulty": "Easy",
+      "durationMinutes": 15,
+      "ingredients": [
+        { "name": "Bread", "quantity": 4, "unit": "slice", "category": 7, "notes": null },
+        { "name": "Egg", "quantity": 2, "unit": "piece", "category": 6, "notes": null },
+        { "name": "Milk", "quantity": 100, "unit": "ml", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Whisk eggs and milk.", "duration": "2 min" },
+        { "instruction": "Dip bread and fry.", "duration": "6 min" }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Egg Omelette",
+      "subtitle": "Quick protein breakfast",
+      "imageName": "egg_omelette",
+      "category": 999,
+      "numberOfServings": 1,
+      "likes": 83,
+      "difficulty": "Easy",
+      "durationMinutes": 10,
+      "ingredients": [
+        { "name": "Egg", "quantity": 2, "unit": "piece", "category": 6, "notes": null },
+        { "name": "Onion", "quantity": 50, "unit": "gram", "category": 5, "notes": "chopped" },
+        { "name": "Oil", "quantity": 1, "unit": "tablespoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Beat eggs with onion.", "duration": "2 min" },
+        { "instruction": "Cook in pan until set.", "duration": "4 min" }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Baked Salmon",
+      "subtitle": "Simple oven-baked fish",
+      "imageName": "baked_salmon",
+      "category": 3,
+      "numberOfServings": 2,
+      "likes": 38,
+      "difficulty": "Easy",
+      "durationMinutes": 20,
+      "ingredients": [
+        { "name": "Salmon fillet", "quantity": 400, "unit": "gram", "category": 3, "notes": null },
+        { "name": "Olive oil", "quantity": 1, "unit": "tablespoon", "category": 7, "notes": null },
+        { "name": "Salt", "quantity": 1, "unit": "teaspoon", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Season salmon.", "duration": "2 min" },
+        { "instruction": "Bake in oven.", "duration": "15 min" }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Fruit Salad Cup",
+      "subtitle": "Fresh mixed fruits",
+      "imageName": "fruit_salad",
+      "category": 4,
+      "numberOfServings": 3,
+      "likes": 16,
+      "difficulty": "Easy",
+      "durationMinutes": 10,
+      "ingredients": [
+        { "name": "Apple", "quantity": 1, "unit": "piece", "category": 5, "notes": "diced" },
+        { "name": "Banana", "quantity": 1, "unit": "piece", "category": 5, "notes": "sliced" },
+        { "name": "Cream", "quantity": 100, "unit": "ml", "category": 6, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Cut all fruits.", "duration": "5 min" },
+        { "instruction": "Mix with cream.", "duration": "2 min" }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Pork BBQ Skewers",
+      "subtitle": "Sweet grilled pork",
+      "imageName": "pork_bbq",
+      "category": 1,
+      "numberOfServings": 4,
+      "likes": 99,
+      "difficulty": "Medium",
+      "durationMinutes": 40,
+      "ingredients": [
+        { "name": "Pork shoulder", "quantity": 700, "unit": "gram", "category": 1, "notes": "cubed" },
+        { "name": "BBQ sauce", "quantity": 4, "unit": "tablespoon", "category": 7, "notes": null },
+        { "name": "Skewers", "quantity": 8, "unit": "piece", "category": 7, "notes": null }
+      ],
+      "steps": [
+        { "instruction": "Marinate pork.", "duration": "30 min" },
+        { "instruction": "Grill until cooked.", "duration": "10 min" }
+      ]
+    }
+  ]
+}
