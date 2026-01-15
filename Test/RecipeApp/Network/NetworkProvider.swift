@@ -7,6 +7,8 @@
 
 import Foundation
 
+///
+/// Defines the API Request template
 public protocol NetworkProvider {
 
   var baseURL: String { get }

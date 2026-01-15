@@ -9,17 +9,25 @@ import SwiftUI
 
 @MainActor
 final class SearchListViewModel: ObservableObject {
+  
+  // MARK: Public Publish/observe/binding properties
   @Published var searchText: String = ""
+  
+  // MARK: Private Publish/observe/binding properties
   @Published private(set) var items: [String] = []
   @Published private(set) var selected: Set<String>
   @Published private(set) var isLoading: Bool = false
   @Published private(set) var errorMessage: String?
 
+  // MARK: Private properties
   private let recipes: [Recipe]
   private let onDone: ([String]) -> Void
   private let onCancel: () -> Void
+  
+  // MARK: Public properties
   let field: SearchField
 
+  // MARK: Initialization
   init(
     recipes: [Recipe],
     field: SearchField,
@@ -34,6 +42,7 @@ final class SearchListViewModel: ObservableObject {
     self.field = field
   }
 
+  // MARK: Public computed properties
   var filteredItems: [String] {
     let base = items
 
@@ -45,6 +54,8 @@ final class SearchListViewModel: ObservableObject {
     return base.filter { $0.lowercased().contains(q) }
   }
 
+  // MARK: Public methods
+  
   func load() {
     guard !isLoading else { return }
     isLoading = true

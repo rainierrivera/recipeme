@@ -9,8 +9,11 @@ import SwiftUI
 
 @MainActor
 final class RecipeDetailViewModel: ObservableObject {
+  
+  // MARK: Public properties
   let recipe: Recipe
 
+  // MARK: Initialization
   init(recipe: Recipe) {
     self.recipe = recipe
   }

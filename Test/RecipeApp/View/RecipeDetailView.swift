@@ -9,14 +9,20 @@ import SwiftUI
 
 struct RecipeDetailView: View {
   
+  // MARK: Private properties
   @ObservedObject private var viewModel: RecipeDetailViewModel
-  
   private var onTappedBack: () -> ()
   
-  init(viewModel: RecipeDetailViewModel, onTappedBack: @escaping () -> Void) {
+  
+  // MARK: Initialization
+  
+  init(viewModel: RecipeDetailViewModel,
+       onTappedBack: @escaping () -> Void) {
     self.viewModel = viewModel
     self.onTappedBack = onTappedBack
   }
+  
+  // MARK: Public properties
   
   var body: some View {
     ScrollView {
@@ -32,10 +38,8 @@ struct RecipeDetailView: View {
           onBack: { onTappedBack() }
         )
 
-        // rest of your detail content below...
+        // rest of detail content below...
         VStack(alignment: .leading, spacing: 16) {
-          // ...
-          
           VStack(spacing: 16) {
             IngredientsCardView(
               ingredients: viewModel.recipe.ingredients.map {

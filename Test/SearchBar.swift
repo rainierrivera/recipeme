@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Container for search texfield
 struct SearchBar: View {
   @Binding var text: String
   let placeholder: String

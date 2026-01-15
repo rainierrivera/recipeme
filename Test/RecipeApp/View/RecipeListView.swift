@@ -17,12 +17,14 @@ struct RecipeListView: View {
   private let strokeWidth: CGFloat = 2
   private let cornerRadius: CGFloat = 28
   
+  // MARK: Initialization
   init(
     viewModel: RecipeListViewModel
   ) {
     _viewModel = StateObject(wrappedValue: viewModel)
   }
 
+  // MARK: public properties
   var body: some View {
     VStack {
       if viewModel.isLoading {
@@ -45,6 +47,7 @@ struct RecipeListView: View {
     }
   }
   
+  // MARK: Private UI Views
   private var searchBox: some View {
     // create fake search box button to navigate to search screen
     Button(action: viewModel.tappedSearch) {

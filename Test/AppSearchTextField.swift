@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Custom textfield for search..
 struct AppSearchTextField: View {
   @Binding var text: String
   var placeholder: String

@@ -11,8 +11,14 @@ import Foundation
 
 enum RecipeAPI: NetworkProvider {
 
+  // use to fetch all recipes
   case fetchRecipes
-  case search(categories: [String], ingredients: [String], servings: [Int], query: String)
+  
+  // use for searching up any specific recipe 
+  case search(categories: [String],
+              ingredients: [String],
+              servings: [Int],
+              query: String)
 
   var baseURL: String {
     // This is a mock backend base URL. Replace with real base URL later.
@@ -41,7 +47,12 @@ enum RecipeAPI: NetworkProvider {
     case .fetchRecipes:
       return nil
 
-    case let .search(course, ingredients, servings, query):
+    // create query for search
+    case let .search(course,
+                     ingredients,
+                     servings,
+                     query):
+      
       let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
 
       var items: [URLQueryItem] = []

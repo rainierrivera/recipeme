@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct SearchItemView: View {
-  @StateObject var viewModel: SearchListViewModel
+  
+  // MARK: Private properties
+  @StateObject private var viewModel: SearchListViewModel
 
+  // MARK: Initialization
   init(viewModel: SearchListViewModel) {
     _viewModel = StateObject(wrappedValue: viewModel)
   }
 
+  // MARK: Public properties
   var body: some View {
     List {
       if viewModel.isLoading {

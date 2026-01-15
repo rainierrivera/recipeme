@@ -10,6 +10,7 @@ import SwiftUI
 @MainActor
 final class SearchViewModel: ObservableObject {
   
+  // MARK: Properties
   @Published var query: String = "" {
     didSet {
       refreshFilteredResults()
@@ -22,18 +23,17 @@ final class SearchViewModel: ObservableObject {
   @Published private(set) var filteredGroupedRecipes: [Category: [Recipe]] = [:]
   @Published private(set) var filteredSortedCategories: [Category] = []
 
+  @Published var isSearchFieldSheetPresented: Bool = false
+  @Published var currentField: SearchField = .category
+  @Published private(set) var selectedItemsByField: [SearchField: [String]] = [:]
+  
   private let network: RecipeNetworkType
   private var recipes: [Recipe] = []
   private var searchRequestID: Int = 0
   private let onSelectRecipe: (Recipe) -> Void
   let selectedCategory: Category?
 
-  @Published var isSearchFieldSheetPresented: Bool = false
-  
-  @Published var currentField: SearchField = .category
-
-  @Published private(set) var selectedItemsByField: [SearchField: [String]] = [:]
-
+  // MARK: Initialization
   init(network: RecipeNetworkType = RecipeNetworkService(),
        selectedCategory: Category? = nil,
        onSelectRecipe: @escaping (Recipe) -> Void) {
@@ -41,18 +41,8 @@ final class SearchViewModel: ObservableObject {
     self.onSelectRecipe = onSelectRecipe
     self.selectedCategory = selectedCategory
   }
-
-  func didTapPill(field: SearchField) {
-    currentField = field
-    loadRecipesIfNeeded()
-    isSearchFieldSheetPresented = true
-  }
-
-  func loadRecipesIfNeeded() {
-    Task {
-      await loadRecipesWithDelayIfNeeded()
-    }
-  }
+  
+  // MARK: Private methods
 
   private func loadRecipesWithDelayIfNeeded() async {
     if !recipes.isEmpty {
@@ -85,7 +75,7 @@ final class SearchViewModel: ObservableObject {
     }
   }
 
-  func refreshFilteredResults() {
+  private func refreshFilteredResults() {
     Task {
       await performSearch()
     }
@@ -127,6 +117,19 @@ final class SearchViewModel: ObservableObject {
       filteredSortedCategories = []
       isLoading = false
       errorMessage = "Search failed: \(error.localizedDescription)"
+    }
+  }
+  
+  // MARK: Public methods
+  func didTapPill(field: SearchField) {
+    currentField = field
+    loadRecipesIfNeeded()
+    isSearchFieldSheetPresented = true
+  }
+
+  func loadRecipesIfNeeded() {
+    Task {
+      await loadRecipesWithDelayIfNeeded()
     }
   }
   

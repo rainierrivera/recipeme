@@ -10,12 +10,14 @@ import SwiftUI
 @MainActor
 final class RecipeListViewModel: ObservableObject {
 
+  // MARK: Private observe/binding properties
   @Published var query: String = ""
   @Published private(set) var groupedRecipes: [Category: [Recipe]] = [:]
   @Published private(set) var sortedCategories: [Category] = []
   @Published private(set) var isLoading: Bool = true
   @Published private(set) var errorMessage: String?
 
+  // MARK: Private properties
   private let network: RecipeNetworkType
 
   private let onSelectRecipe: (Recipe) -> Void
@@ -23,6 +25,7 @@ final class RecipeListViewModel: ObservableObject {
   private let onSelectCategory: (Category) -> Void
   private var recipes: [Recipe] = []
   
+  // MARK: Initialization
   init(
     network: RecipeNetworkType = RecipeNetworkService(),
     onSelectRecipe: @escaping (Recipe) -> Void,
@@ -35,6 +38,9 @@ final class RecipeListViewModel: ObservableObject {
     self.onSelectCategory = onSelectCategory
   }
 
+  
+  // MARK: Public methods
+  
   func loadRecipes() async {
     isLoading = true
     errorMessage = nil

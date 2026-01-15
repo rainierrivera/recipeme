@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// Since Sections are reusable layout
+// RecipeSectionCard will handle the title of the section
+// Just inject content: View
 struct RecipeSectionCard<Content: View>: View {
   let title: String
   let content: Content

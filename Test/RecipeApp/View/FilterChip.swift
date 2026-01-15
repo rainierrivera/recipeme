@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Use for search categories
 struct FilterChip: View {
   let title: String
   let value: String

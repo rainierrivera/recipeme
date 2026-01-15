@@ -7,11 +7,15 @@
 
 import Foundation
 
+// MockNetworkService will be used to get the local response json
+// This is where we handle the return of recipes
 final class MockNetworkService: Network {
   
   private let jsonProvider: LocalJSONRecipeProvider = LocalJSONRecipeProvider()
   
-  func request<T: Decodable>(_ provider: NetworkProvider, responseType: T.Type) async throws -> T {
+  func request<T: Decodable>(_ provider: NetworkProvider,
+                             responseType: T.Type) async throws -> T {
+    
     let recipes = try jsonProvider.loadRecipes()
     let payload = RecipePayload(recipes: recipes)
     
@@ -20,8 +24,8 @@ final class MockNetworkService: Network {
       let data = try JSONEncoder().encode(payload)
       return try JSONDecoder().decode(T.self, from: data)
       
-    case let RecipeAPI.search(course, ingredients, servings, query):
-      let selectedCourses = course
+    case let RecipeAPI.search(categories, ingredients, servings, query):
+      let selectedCategories = categories
         .map { $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
         .filter { !$0.isEmpty }
 
@@ -34,10 +38,10 @@ final class MockNetworkService: Network {
       let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
 
       let filtered: [Recipe] = payload.recipes.filter { recipe in
-        // Course: OR across selected courses
-        if !selectedCourses.isEmpty {
-          let courseName = recipe.category.description.lowercased()
-          if !selectedCourses.contains(where: { courseName == $0 }) {
+        // Categories: across selected category
+        if !selectedCategories.isEmpty {
+          let categoryName = recipe.category.description.lowercased()
+          if !selectedCategories.contains(where: { categoryName == $0 }) {
             return false
           }
         }
@@ -62,9 +66,11 @@ final class MockNetworkService: Network {
         }
 
         // Query: match title/subtitle
+        // content and title should be searchable
+        // subtitle = content
         if !q.isEmpty {
-          let haystack = "\(recipe.title) \(recipe.subtitle)".lowercased()
-          if !haystack.contains(q) {
+          let fullText = "\(recipe.title) \(recipe.subtitle)".lowercased()
+          if !fullText.contains(q) {
             return false
           }
         }
@@ -74,9 +80,10 @@ final class MockNetworkService: Network {
 
       let filteredPayload = RecipePayload(recipes: filtered)
       let data = try JSONEncoder().encode(filteredPayload)
+      
       return try JSONDecoder().decode(T.self, from: data)
       
-    default: throw NetworkServiceError.emptyResponse
+    default: throw NetworkServiceError.emptyResponse // just throw any error for now..
     }
   }
 }

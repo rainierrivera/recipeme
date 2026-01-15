@@ -27,7 +27,8 @@ final class NetworkService: Network {
     self.decoder = decoder
   }
 
-  func request<T: Decodable>(_ provider: NetworkProvider, responseType: T.Type) async throws -> T {
+  func request<T: Decodable>(_ provider: NetworkProvider,
+                             responseType: T.Type) async throws -> T {
     let urlRequest = try buildURLRequest(from: provider)
 
     let (data, response) = try await session.data(for: urlRequest)

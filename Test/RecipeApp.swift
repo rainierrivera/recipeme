@@ -15,6 +15,7 @@ struct RecipeApp: App {
   
   var body: some Scene {
     WindowGroup {
+      // Coordinator will handle the views
       coordinator.view
       .onAppear {
         coordinator.start()

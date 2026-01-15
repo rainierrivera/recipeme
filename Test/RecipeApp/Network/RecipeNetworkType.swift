@@ -8,6 +8,11 @@
 import Foundation
 
 protocol RecipeNetworkType {
+  
   func fetchAllRecipes() async throws -> [Recipe]
-  func searchRecipes(categories: [String], ingredients: [String], servings: [Int], queryText: String) async throws -> [Recipe]
+  
+  func searchRecipes(categories: [String],
+                     ingredients: [String],
+                     servings: [Int],
+                     queryText: String) async throws -> [Recipe]
 }
