@@ -1,21 +1,26 @@
 # recipeme
-RecipeApp – Project Structure
 
-This project is built using SwiftUI and targets Xcode 26.2, following a modular MVVM + Coordinator architecture.
+## RecipeApp – Project Structure
+
+This project is built using **SwiftUI** and targets **Xcode 26.2**, following a **modular MVVM + Coordinator** architecture.  
 It emphasizes clean separation of concerns, testability via dependency injection, and flexibility between real API requests and local mock data.
 
-⸻
+---
 
-🧱 Technology Stack
-  •  SwiftUI
-  •  Xcode 26.2
-  •  MVVM Architecture
-  •  Coordinator Pattern
-  •  Dependency Injection
-  •  Local JSON Mocking for Development
+## 🧱 Technology Stack
 
-📁 Project Structure Overview
+- SwiftUI
+- Xcode 26.2
+- MVVM Architecture
+- Coordinator Pattern
+- Dependency Injection
+- Local JSON Mocking for Development
 
+---
+
+## 📁 Project Structure Overview
+
+```
 Test
 ├── Coordinator
 ├── Model
@@ -45,153 +50,162 @@ Test
 ├── SearchViewModel
 ├── TestTests
 └── TestUITests
+```
 
+---
 
+## 🧭 Coordinator
 
-🧭 Coordinator
+**Coordinator/**
 
-Coordinator/
-  •  Centralizes navigation logic
-  •  Keeps navigation out of views and view models
-  •  Makes screen flow predictable and scalable
-  •  Enables easier refactoring as the app grows
+- Centralizes navigation logic
+- Keeps navigation out of views and view models
+- Makes screen flow predictable and scalable
+- Enables easier refactoring as the app grows
 
-⸻
+---
 
-📦 Model Layer
+## 📦 Model Layer
 
-Model/
+**Model/**
 
 Contains all domain and data models used across the app:
-  •  Core models:
-Recipe, RecipeStep, Ingredient
-  •  Classification models:
-Category, IngredientCategory
-  •  UI display helpers:
-IngredientDisplayItem, PopularRecipeItem
-  •  Network payloads:
-RecipePayload
+
+- **Core models**
+  - `Recipe`
+  - `RecipeStep`
+  - `Ingredient`
+- **Classification models**
+  - `Category`
+  - `IngredientCategory`
+- **UI display helpers**
+  - `IngredientDisplayItem`
+  - `PopularRecipeItem`
+- **Network payloads**
+  - `RecipePayload`
 
 All models are designed to be:
-  •  Codable / Decodable
-  •  Compatible with both real API responses and local JSON
 
+- Codable / Decodable
+- Compatible with both real API responses and local JSON
 
+---
 
-⸻
+## 🌐 Network Layer
 
-🌐 Network Layer
+**RecipeApp/Network/**
 
-RecipeApp/Network/
-  •  Designed for real-time API requests
-  •  Supports:
-  •  Configurable endpoints
-  •  Query parameters
-  •  Headers
-  •  Abstracted via protocols to support swapping implementations
+- Designed for real-time API requests
+- Supports:
+  - Configurable endpoints
+  - Query parameters
+  - Headers
+- Abstracted via protocols to support swapping implementations
 
-🧪 Mock Network Support
+### 🧪 Mock Network Support
 
 Although the network layer is production-ready, the project includes:
-  •  MockNetworkService
-  •  Reads from recipes.json
-  •  Enables:
-  •  Offline development
-  •  Predictable data
-  •  Faster UI iteration without backend dependency
 
-The mock and real network services are interchangeable via dependency injection.
+- `MockNetworkService`
+- Reads from `recipes.json`
+- Enables:
+  - Offline development
+  - Predictable data
+  - Faster UI iteration without backend dependency
 
+The mock and real network services are interchangeable via **dependency injection**.
 
-⸻
+---
 
-🧰 Service Layer
+## 🧰 Service Layer
 
-RecipeApp/Service/
-  •  Handles business logic
-  •  Orchestrates data between Network and ViewModels
-  •  Keeps ViewModels lightweight and focused on presentation logic
+**RecipeApp/Service/**
 
-⸻
+- Handles business logic
+- Orchestrates data between Network and ViewModels
+- Keeps ViewModels lightweight and focused on presentation logic
 
-🖼 View Layer
+---
 
-RecipeApp/View/
+## 🖼 View Layer
+
+**RecipeApp/View/**
 
 Contains all SwiftUI views:
-  •  Recipe lists and detail screens
-  •  Search and filtering UI
-  •  Reusable components:
-  •  Recipe cards
-  •  Ingredient cards
-  •  Search fields
+
+- Recipe lists and detail screens
+- Search and filtering UI
+- Reusable components:
+  - Recipe cards
+  - Ingredient cards
+  - Search fields
 
 Views are:
-  •  Stateless
-  •  Driven entirely by ViewModels
-  •  Easy to preview and reuse
 
-⸻
+- Stateless
+- Driven entirely by ViewModels
+- Easy to preview and reuse
 
+---
 
-⸻
+## 🧠 ViewModel Layer
 
-🧠 ViewModel Layer
+**RecipeApp/ViewModel/**
 
-RecipeApp/ViewModel/
-  •  Implements MVVM pattern
-  •  Manages:
-  •  UI state
-  •  Search logic
-  •  Filtering and grouping
-  •  User interactions
-  •  Communicates only with Services / Network abstractions
+- Implements MVVM pattern
+- Manages:
+  - UI state
+  - Search logic
+  - Filtering and grouping
+  - User interactions
+- Communicates only with Services / Network abstractions
 
-Testability
-  •  ViewModels and data objects are fully testable
-  •  All dependencies are injected
-  •  No hard coupling to concrete network implementations
+### Testability
 
-⸻
-🔍 Search Components
+- ViewModels and data objects are fully testable
+- All dependencies are injected
+- No hard coupling to concrete network implementations
+
+---
+
+## 🔍 Search Components
 
 Reusable SwiftUI components:
-  •  AppSearchTextField
-  •  SearchBar
-  •  SearchField
-  •  SearchItemView
+
+- `AppSearchTextField`
+- `SearchBar`
+- `SearchField`
+- `SearchItemView`
 
 Designed for reuse across multiple screens.
 
-⸻
+---
 
-🧪 Testing
+## 🧪 Testing
 
-Current Status
-  •  ❌ Unit tests are not yet implemented
-  •  Test targets already exist:
-  •  TestTests
-  •  TestUITests
+### Current Status
 
-Architecture Readiness
+- ❌ Unit tests are not yet implemented
+- Test targets already exist:
+  - `TestTests`
+  - `TestUITests`
+
+### Architecture Readiness
 
 Even though tests are not yet written:
-  •  Models are isolated
-  •  ViewModels use dependency injection
-  •  Network layer is mockable
+
+- Models are isolated
+- ViewModels use dependency injection
+- Network layer is mockable
 
 This makes the codebase ready for unit testing when added.
 
-⸻
+---
 
+## 📌 Summary
 
-📌 Summary
-  •  ✅ Built with SwiftUI (Xcode 26.2)
-  •  ✅ MVVM + Coordinator architecture
-  •  ✅ Real network layer with mock JSON fallback
-  •  ✅ Dependency-injected, testable design
-  •  ⏳ Unit tests planned but not yet implemented
-
-⸻
-
-
+- ✅ Built with SwiftUI (Xcode 26.2)
+- ✅ MVVM + Coordinator architecture
+- ✅ Real network layer with mock JSON fallback
+- ✅ Dependency-injected, testable design
+- ⏳ Unit tests planned but not yet implemented
